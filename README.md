@@ -1,2 +1,3 @@
 # wordpress
-An OMG service to access the WordPress API
+
+An OMS service to access the WordPress API
