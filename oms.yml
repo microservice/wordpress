@@ -23,7 +23,7 @@ actions:
     arguments:
       author:
         help: The id of the author
-        type: number
+        type: int
         in: query
         required: false
       status:
@@ -33,14 +33,17 @@ actions:
         required: false
       page:
         help: Pagination parameter
-        type: number
+        type: int
         in: query
         required: false
       per_page:
         help: Number of posts per page
-        type: number
+        type: int
         in: query
         required: false
+    output:
+      type: map
+      contentType: application/json
   newpost:
     help: Create a new post
     http:
@@ -63,6 +66,9 @@ actions:
         type: string
         in: requestBody
         required: false
+    output:
+      type: map
+      contentType: application/json
   updatepost:
     help: Update a post
     http:
@@ -72,7 +78,7 @@ actions:
     arguments:
       id:
         help: The id of the post
-        type: number
+        type: int
         in: requestBody
         required: true
       title:
@@ -90,6 +96,9 @@ actions:
         type: string
         in: requestBody
         required: false
+    output:
+      type: map
+      contentType: application/json
   deletepost:
     help: Delete a post
     http:
@@ -99,9 +108,12 @@ actions:
     arguments:
       id:
         help: The id of the post
-        type: number
+        type: int
         in: requestBody
         required: true
+    output:
+      type: map
+      contentType: application/json
 environment:
   url:
     type: string
